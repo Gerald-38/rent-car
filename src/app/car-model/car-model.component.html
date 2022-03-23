@@ -1,2 +1,21 @@
-<p>Modèle choisi</p>
-<p>L'id de la voiture est {{ id }} </p>
+<!-- <p>Modèle choisi</p>
+<p>Marque :  {{ car.brand }} </p>
+<p>Modèle : {{ car.type  }} </p>
+<p>Modèle : {{ car.type  }} </p>
+<p>Modèle : {{ car.power  }} </p>
+<p>Modèle : {{ car.description  }} </p>
+<p>Modèle : {{ car.wifi  }} </p>
+<img src="{{ car.image  }}" alt=""> -->
+
+<div class="card" *ngIf="car">
+    <div class="card-header">
+        {{ car.brand }} {{ car.type  }}
+    </div>
+    <div class="card-body">         
+      <p class="card-text">{{ car.description  }}</p>
+      <p>Puissance: {{ car.power  }} ch</p>
+      <p *ngIf="car.wifi">Wifi inclus</p>
+      <p>Prix : {{ car.price }} € / jour </p>
+      <img width="750" src="{{ car.image }}" class="rounded mx-auto d-block" alt="...">
+    </div>
+</div>

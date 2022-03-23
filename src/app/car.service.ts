@@ -29,9 +29,16 @@ export class CarService {
     return this.http.get<Car[]>(this.carsUrl + '/.json', httpOptions).pipe(
     // Préparation des données avec _.values pour avoir un format exploitable dans l'applimap(albums => _.values(albums)),
     // Ordonnez les albums par ordre de durées décroissantes
-    map(cars => cars)
-  )
-}
+      map(cars => cars)
+    )
+  }
+
+  getCar(id: string): Observable<Car> {
+    // URL/ID/.json pour récupérer un album
+    return this.http.get<Car>(this.carsUrl + `/${id}/.json`).pipe(
+    map(car => car) // JSON
+    );
+  }
   
 
 
