@@ -11,15 +11,15 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Marques</a>
+            <a class="nav-link active" aria-current="page" routerLink="/brands" routerLinkActive="active">Marques</a>
           </li>
           <!-- <li *ngIf="auth.authenticated()==false" class="nav-item"> -->
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" routerLink="/login" routerLinkActive="active">Se connecter</a>
+              <a class="nav-link" routerLink="/login" routerLinkActive="active">Se connecter</a>
           </li>
           <!-- <li *ngIf="auth.authenticated()==true" class="nav-item"> -->
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" routerLink="/admin" routerLinkActive="active">Admin</a>
+            <a class="nav-link active" aria-current="page" routerLink="/admin" routerLinkActive="active">Admin</a>
           </li>
           <!-- <li *ngIf="auth.authenticated()==true"  class="nav-item"> -->
           <li class="nav-item">
@@ -30,5 +30,6 @@
       </div>
     </div>
   </nav>
-  <app-cars></app-cars>
+  <!-- <app-cars></app-cars> -->
 </div>
+<router-outlet></router-outlet>
