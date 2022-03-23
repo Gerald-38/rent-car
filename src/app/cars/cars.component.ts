@@ -15,10 +15,10 @@ export class CarsComponent implements OnInit {
 
   constructor(private carService: CarService) { 
     // this.carService.getCars()
-    console.log(this.carService.getCars().subscribe(
+    this.carService.getCars().subscribe(
       cars => this.cars = cars
-      ))
-   }
+    )
+  }
 
   ngOnInit(): void {
 

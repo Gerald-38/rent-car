@@ -22,6 +22,7 @@ export class CarService {
 
   private cars: Car | undefined;
   private carsUrl = 'https://cars-32f4e-default-rtdb.europe-west1.firebasedatabase.app/cars'
+  private brands = []
 
   constructor(private http: HttpClient) { }
 
@@ -39,8 +40,21 @@ export class CarService {
     map(car => car) // JSON
     );
   }
-  
 
-
+  getBrands(): Observable<Car> {
+    return this.http.get<Car[]>(this.carsUrl + '/.json', httpOptions).pipe(
+    // Préparation des données avec _.values pour avoir un format exploitable dans l'applimap(albums => _.values(albums)),
+    // Ordonnez les albums par ordre de durées décroissantes
+    map(cars => {
+      let brands: any = [];
+      cars.forEach((v: Car) => {
+        if (brands.indexOf(v.brand) < 0) {
+          brands.push(v.brand);
+        }        
+      });
+      return brands;
+    }),
+    )
+  }
 
 }
