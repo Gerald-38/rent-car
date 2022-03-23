@@ -1,6 +1,6 @@
 import { Car } from './car';
 
-export const ALBUMS: Car[] = [
+export const CARS: Car[] = [
     {
         "id": "1",
         "brand": "Ford",
@@ -9,7 +9,7 @@ export const ALBUMS: Car[] = [
         "description": "L’incroyable Ford Mustang a récemment été qualifiée de voiture la plus performante jamais vendue en Europe",
         "price": "500",
         "wifi": true,
-        "image": ""
+        "image": "./assets/fordmustang.jpg"
     },
     {
         "id": "2",
@@ -19,7 +19,7 @@ export const ALBUMS: Car[] = [
         "description": "Avec son nouveau design et sa connectivité dernière génération, la Ford Focus offre une expérience de conduite plus agréable que jamais.",
         "price": "150",
         "wifi": true,
-        "image": ""
+        "image": "./assets/fordfocus.jpg"
     },
     {
         "id": "3",
@@ -29,7 +29,7 @@ export const ALBUMS: Car[] = [
         "description": "Grâce à son nouveau design extérieur, l'iconique citadine arrive à dégager une présence impressionante sur la route.",
         "price": "130",
         "wifi": true,
-        "image": ""
+        "image": "./assets/fordfiesta.jpg"
     },
     {
         "id": "4",
@@ -39,7 +39,7 @@ export const ALBUMS: Car[] = [
         "description": "Couvert ou décapoté, le plaisir de conduire ne connaît plus aucunes limites au volant de la nouvelle BMW Z4. Un roadster, dans sa version la plus aboutie ",
         "price": "700",
         "wifi": true,
-        "image": ""
+        "image": "./assets/bmwz4.jpg"
     },
     {
         "id": "5",
@@ -49,7 +49,7 @@ export const ALBUMS: Car[] = [
         "description": "La 318 ouvre désormais l'offre essence de la berline star du constructeur bavarois, avec la bonne idée de conserver un 4 cylindres.",
         "price": "400",
         "wifi": true,
-        "image": ""
+        "image": "./assets/bmw318.jpg"
     },
     {
         "id": "6",
@@ -59,7 +59,7 @@ export const ALBUMS: Car[] = [
         "description": "Le monospace à vivre. découvrez une voiture familiale compacte et innovante, maline dans son optimisation de l'espace intérieur.",
         "price": "250",
         "wifi": true,
-        "image": ""
+        "image": "./assets/renaultscenic.jpeg"
     },
     {
         "id": "7",
@@ -69,7 +69,7 @@ export const ALBUMS: Car[] = [
         "description": "Corps de berline compacte, style crossover, arrière sculpté, lignes sportives. Ses lignes aérodynamiques offrent une allure racée, une conduite exaltante. ",
         "price": "150",
         "wifi": true,
-        "image": ""
+        "image": "./assets/renaultmegane.jpg"
     },
     {
         "id": "8",
@@ -79,7 +79,7 @@ export const ALBUMS: Car[] = [
         "description": "l'iconique citadine continue de vous surprendre",
         "price": "100",
         "wifi": false,
-        "image": ""
+        "image": "./assets/renaultclio.jpg"
     },
     {
         "id": "9",
@@ -89,7 +89,7 @@ export const ALBUMS: Car[] = [
         "description": "Nouveau Dacia Duster affirme son caractère de baroudeur pour vous accompagner dans toutes vos aventures et s'impose comme le SUV familial emblématique Dacia.",
         "price": "200",
         "wifi": true,
-        "image": ""
+        "image": "./assets/daciaduster.jpg"
     },
     {
         "id": "10",
@@ -99,7 +99,7 @@ export const ALBUMS: Car[] = [
         "description": "Avec sa silhouette robuste et sa face avant repensée, soulignée par sa signature de marque en forme de Y à feux LED, Sandero dévoile son design totalement renouvelé.",
         "price": "150",
         "wifi": false,
-        "image": ""
+        "image": "./assets/daciasandero.jpeg"
     }
 
 ]
