@@ -13,23 +13,18 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/brands" routerLinkActive="active">Marques</a>
           </li>
-          <!-- <li *ngIf="auth.authenticated()==false" class="nav-item"> -->
             <li class="nav-item">
-              <a class="nav-link" routerLink="/login" routerLinkActive="active">Se connecter</a>
+              <a  *ngIf="auth.authenticated()==false" class="nav-link" routerLink="/login" routerLinkActive="active">Se connecter</a>
           </li>
-          <!-- <li *ngIf="auth.authenticated()==true" class="nav-item"> -->
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/admin" routerLinkActive="active">Admin</a>
+            <a  *ngIf="auth.authenticated()==true" class="nav-link active" aria-current="page" routerLink="/admin" routerLinkActive="active">Admin</a>
           </li>
-          <!-- <li *ngIf="auth.authenticated()==true"  class="nav-item"> -->
           <li class="nav-item">
-            <!-- <a class="nav-link disconnect" aria-current="page" href="#" (click)="auth.logout()">logout</a> -->
-            <a class="nav-link disconnect" aria-current="page" href="#" >logout</a>
+            <a *ngIf="auth.authenticated()==true" class="nav-link disconnect" aria-current="page" href="#" (click)="auth.logout()">logout</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- <app-cars></app-cars> -->
 </div>
 <router-outlet></router-outlet>

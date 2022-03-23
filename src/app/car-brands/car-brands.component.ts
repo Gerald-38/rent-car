@@ -14,6 +14,8 @@ export class CarBrandsComponent implements OnInit {
   
   titlePage = "Marques proposées en location"
 
+  //  On récupère la liste des marques et des voitures pour ventiler l'affichage des voitures par marque dans le template
+
   constructor(private carService: CarService) {
         // this.carService.getCars()
         this.carService.getCars().subscribe(
@@ -24,12 +26,8 @@ export class CarBrandsComponent implements OnInit {
         )           
   }  
 
-  // Créer un array des marques de voitures
-  // dans le template d'abord boucler sur cet array pour afficher les voitures dont la marque est égale à l'élément de l'array
-
   ngOnInit(): void {
   
   }
 }
 
-// on définit un array des brands vide, on parcourt les brand, si la brand n'est pas dans l'array des brands on la pushe dedans

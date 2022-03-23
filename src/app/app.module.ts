@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
@@ -13,6 +12,14 @@ import { AdminComponent } from './admin/admin.component'; // module des routes e
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import { GuardService } from './guard.service';
+import firebase from 'firebase/compat/app';
+// import * as firebase from 'firebase/compat';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -28,8 +35,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+firebase.initializeApp(firebaseConfig);
+
+
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 
 const carsRoutes: Routes = [
   {
@@ -54,7 +64,7 @@ const carsRoutes: Routes = [
     component: CarBrandsComponent
   },
   {
-    path: 'admin',
+    path: 'admin', canActivate: [GuardService],
     component: AdminComponent
   }
   ];
@@ -73,8 +83,12 @@ const carsRoutes: Routes = [
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(carsRoutes),
-    HttpClientModule
-    
+    HttpClientModule,
+    FormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

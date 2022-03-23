@@ -1,1 +1,25 @@
-<p>Formulaire de connection</p>
+<div class="row-content">
+    <h1>Connectez vous pour accéder à votre console d'administration</h1>
+    <form (ngSubmit)="onSubmit(formLogin)" #formLogin="ngForm">
+        <p *ngIf="messageError">{{ messageError }}</p>
+        <div class="form-group">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput name="email" ngModel email required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+        </div>
+        <div class="form-group">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="password" ngModel required type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        </div>
+        <button mat-stroked-button color="primary"[disabled]="formLogin.invalid" type="submit">Submit</button>
+    </form>
+</div>
+
