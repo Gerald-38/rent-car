@@ -12,13 +12,18 @@ import { AdminComponent } from './admin/admin.component'; // module des routes e
 import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { GuardService } from './guard.service';
 import firebase from 'firebase/compat/app';
+import { UpdateCarComponent } from './update-car/update-car.component';
+import { AddCarComponent } from './add-car/add-car.component';
+import { PaginateComponent } from './paginate/paginate.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 // import * as firebase from 'firebase/compat';
 
 // Your web app's Firebase configuration
@@ -66,6 +71,14 @@ const carsRoutes: Routes = [
   {
     path: 'admin', canActivate: [GuardService],
     component: AdminComponent
+  },
+  {
+    path: 'add', canActivate: [GuardService],
+    component: AddCarComponent
+  },
+  {
+    path: 'update/:id', canActivate: [GuardService],
+    component: UpdateCarComponent
   }
   ];
 
@@ -76,7 +89,10 @@ const carsRoutes: Routes = [
     LoginComponent,
     CarModelComponent,
     CarBrandsComponent,
-    AdminComponent
+    AdminComponent,
+    UpdateCarComponent,
+    AddCarComponent,
+    PaginateComponent
   ],
   imports: [
     BrowserModule,
@@ -85,10 +101,12 @@ const carsRoutes: Routes = [
     RouterModule.forRoot(carsRoutes),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule ,
     MatInputModule,
     MatIconModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

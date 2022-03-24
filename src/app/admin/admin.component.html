@@ -1,36 +1,36 @@
-<br>
 <div class="row-content">
     <h1>Console d'administration</h1>
     <div class="col-sm-8 music">
         <table class="table table-dark">
             <thead>
-            <tr>
+              <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
+                <th scope="col">modifier</th>
+                <th scope="col">marque</th>
+                <th scope="col">modèle</th>
+                <th scope="col">puissance</th>
+                <th scope="col">supprimer</th>
+              </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+              <tr *ngFor="let car of cars">
+                <th scope="row">{{car.id}} </th>
+                <td>
+                  <button routerLink="/update/{{car.id}}" type="button" class="btn btn-secondary">udpate</button>
+                  <!-- <button type="button" class="btn btn-secondary">Modifier</button> -->
+                </td>
+                <td>{{car.brand}}</td>
+                <td>{{car.type}}</td>
+                <td>{{car.price}} € / jour</td>
+                <td>
+                  <!-- <button class="btn btn-danger" (click)="onDelete(album)">Delete</button> -->
+                  <button class="btn btn-danger">Supprimer</button>
+                </td>
+              </tr>      
             </tbody>
         </table>
+        <p>
+          <button class="btn btn-dark" routerLink="/add">Ajouter une voiture</button>
+        </p>
     </div>
 </div>
