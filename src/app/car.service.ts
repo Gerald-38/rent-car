@@ -91,6 +91,14 @@ export class CarService {
       return this.http.put<void>(this.carsUrl + `/${car.id}/.json`, car);
     }
 
+    addCar(car: Car): Observable<void> {
+      return this.http.post<void>(this.carsUrl + '/.json', car);
+    }
+
+    deleteCar(car: Car): Observable<void> {
+      return this.http.delete<void>(this.carsUrl + `/${car.id}/.json`);
+    }
+
 
   
 
