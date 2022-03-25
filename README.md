@@ -16,8 +16,8 @@ pwd: azerty
 
 ## Installer le projet
 * Cloner ce repository
-* 'npm install'
-* 'ng serve'
+* Entrer la commande npm install
+* Entrer la commande ng serve
 * accéder à l'adresse `http://localhost:4200/`
 
 ## Development server
