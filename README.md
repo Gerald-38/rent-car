@@ -12,7 +12,7 @@ pwd: azerty
 * Input, Output
 * Services
 * Animations
-* rxjs
+* rxjs / Observables / Subject
 
 ## Installer le projet
 * Cloner ce repository
