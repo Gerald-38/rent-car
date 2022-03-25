@@ -1,8 +1,12 @@
 # RentCar
 
+## Description du projet
+
 Site de location de voitures. Identifiants pour l'authentification : 
 login : test@test.com
 pwd: azerty
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
