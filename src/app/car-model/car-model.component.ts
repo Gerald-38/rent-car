@@ -17,9 +17,7 @@ export class CarModelComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id)
-    // if(id)
-    // this.car = this.aS.getAlbum(id);
+
     if (id) {  
       this.carService.getCar(id).subscribe(
         car => this.car = car        

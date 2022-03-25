@@ -32,8 +32,6 @@ export class CarService {
 
     // retourne la liste des cars avec pagination 
     paginate(start: number, end: number): Observable<Car[]> {
-
-      // Vous devez faire le mapping avant la récupération des données
       return this.http.get<Car[]>(this.carsUrl + '/.json', httpOptions).pipe(
         // Préparation des données pour avoir un format exploitable dans l'application
         // JSON en Array JSON

@@ -17,7 +17,6 @@ export class CarBrandsComponent implements OnInit {
   //  On récupère la liste des marques et des voitures pour ventiler l'affichage des voitures par marque dans le template
 
   constructor(private carService: CarService) {
-        // this.carService.getCars()
         this.carService.getCars().subscribe(
           cars => this.cars = cars            
         ) 

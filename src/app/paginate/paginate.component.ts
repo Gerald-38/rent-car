@@ -64,8 +64,8 @@ previous() {
 }
 
 paginate(page: number): { start: number, end: number } {
-  const start = (page - 1) * this.perPage; // 0 2
-  const end = start + this.perPage; // 2 4
+  const start = (page - 1) * this.perPage;
+  const end = start + this.perPage;
 
   return { start: start, end: end };
 }

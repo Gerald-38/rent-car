@@ -1,5 +1,4 @@
 <form class="form-inline my-2 my-lg-0" (ngSubmit)="onSubmit(formSearch)" #formSearch="ngForm">
-    <!-- <input name="word" ngModel required  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
     <mat-form-field class="example-form-field" appearance="fill">
         <mat-label>Clearable input</mat-label>
         <input matInput type="text"  name="word" ngModel required   type="search" placeholder="Search" aria-label="Search">
@@ -7,6 +6,5 @@
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
-    <!-- <button [disabled]="formSearch.invalid" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
     <button mat-stroked-button color="primary"[disabled]="formSearch.invalid" type="submit">Search</button>
 </form>

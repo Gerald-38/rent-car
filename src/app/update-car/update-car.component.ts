@@ -96,9 +96,5 @@ export class UpdateCarComponent implements OnInit {
       }
     )
   }
-
-
-  
-
 }
 
