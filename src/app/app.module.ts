@@ -24,6 +24,7 @@ import { AddCarComponent } from './add-car/add-car.component';
 import { PaginateComponent } from './paginate/paginate.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SearchComponent } from './search/search.component';
+import { RentCarComponent } from './rent-car/rent-car.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC2ldpWXZ84EsUAWYILK3LoC7gSmOOluaU",
@@ -86,7 +87,8 @@ const carsRoutes: Routes = [
     UpdateCarComponent,
     AddCarComponent,
     PaginateComponent,
-    SearchComponent
+    SearchComponent,
+    RentCarComponent
   ],
   imports: [
     BrowserModule,
