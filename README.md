@@ -6,9 +6,17 @@ Site de location de voitures. Identifiants pour l'authentification :
 login : test@test.com
 pwd: azerty
 
+## Technos utilisées
+***
+* Material design (pour le formulaire d'authentification)
+* Firebase
+* Input, Output
+* Services
+* Animations
+* rxjs
 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+
 
 ## Development server
 
