@@ -7,7 +7,6 @@ login : test@test.com
 pwd: azerty
 
 ## Technos utilisées
-***
 * Material design (pour le formulaire d'authentification)
 * Firebase
 * Input, Output
@@ -15,8 +14,10 @@ pwd: azerty
 * Animations
 * rxjs
 
-
-
+## Installer le projet
+* Cloner ce repository
+* npm install
+* ng serve
 
 ## Development server
 
