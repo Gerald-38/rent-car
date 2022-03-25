@@ -23,6 +23,7 @@ import { UpdateCarComponent } from './update-car/update-car.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { PaginateComponent } from './paginate/paginate.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { SearchComponent } from './search/search.component';
 
 // import * as firebase from 'firebase/compat';
 
@@ -69,7 +70,7 @@ const carsRoutes: Routes = [
     component: CarBrandsComponent
   },
   {
-    path: 'admin', canActivate: [GuardService],
+    path: 'admin', 
     component: AdminComponent
   },
   {
@@ -92,7 +93,8 @@ const carsRoutes: Routes = [
     AdminComponent,
     UpdateCarComponent,
     AddCarComponent,
-    PaginateComponent
+    PaginateComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

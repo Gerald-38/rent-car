@@ -1,6 +1,6 @@
-
-<form [formGroup]="updateFormCar" (ngSubmit)="onSubmit()">
-<!-- <form > -->
+<div  class="row-content">
+  <h1>Mise à jour des données sur la voiture</h1>
+  <form [formGroup]="updateFormCar" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="brand">Marque :</label>
       <input formControlName="brand" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Entrez la marque">
@@ -30,4 +30,5 @@
         <input formControlName="image" type="image" class="form-control" id="image" placeholder="Image">
     </div>
     <button [disabled]="" type="submit" class="btn btn-primary">Update</button>
-</form>
+  </form>
+</div>

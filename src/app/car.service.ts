@@ -22,9 +22,9 @@ import * as _ from 'lodash';
 })
 export class CarService {
 
-  private cars: Car | undefined;
+  private cars: Car[] | undefined;
   private carsUrl = 'https://cars-32f4e-default-rtdb.europe-west1.firebasedatabase.app/cars'
-  // private brands = []
+ 
   sendCurrentNumberPage = new Subject<number>(); // pour mettre à jour la pagination 
    
 
@@ -45,6 +45,9 @@ export class CarService {
           });  
           return Cars;
         }),
+        map(cars => {
+          return cars.slice(start, end); // slicing des données
+        })
       )
     }
 
@@ -87,6 +90,22 @@ export class CarService {
       )
     }
 
+    // méthode search
+    search(word: string): Observable<Car[]> {
+
+      return this.http.get<Car[]>(this.carsUrl + '/.json', httpOptions).pipe(
+        map(cars => {
+          let search: Car[] = [];
+          let re = new RegExp('^' + word.trim())
+          cars.forEach((v: Car, k: any) => {
+            v.id = k;
+            if (v.brand.match(re) != null) search.push(v);
+          })
+          return search;
+        })
+      );
+    }
+
     updateCar(car: Car): Observable<void> {
       return this.http.put<void>(this.carsUrl + `/${car.id}/.json`, car);
     }
@@ -98,6 +117,7 @@ export class CarService {
     deleteCar(car: Car): Observable<void> {
       return this.http.delete<void>(this.carsUrl + `/${car.id}/.json`);
     }
+
 
 
   

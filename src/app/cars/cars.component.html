@@ -1,24 +1,18 @@
 <div  class="row-content">
-    <!-- .video -->
+  <div class="col-sm-4 video">
+        
+  </div>
     <h1>{{ titlePage }}</h1>
-    <app-paginate (setPaginate)="paginate($event)"></app-paginate>
-    <div [@details]="isOpen? 'open' : 'opening'" class="col-sm-8 music">      
-      <!-- Pagination -->
-      <!-- let index permet de récupérer l'indice numérique de la liste -->
+    <app-paginate (setPaginate)="paginate($event)"></app-paginate> <app-search (searchCars)="search($event)"></app-search>
+    <div [@details]="isOpen? 'open' : 'opening'" class="col-sm-8 music">
       <div class="card" *ngFor="let car of cars; let index = index;">
         <div class="card-header">
-          <!-- permet d'afficher l'index -->
-          <!-- <h3> {{ car.brand }} {{ car.type }} </h3> -->
           <h5 class="card-title"><a class="text-info" routerLink="/car/{{car.id}}">{{ car.brand }} {{ car.type }}</a></h5>          
         </div>
         <div class="card-body">          
           <p class="card-text">{{ car.price }} € / jour</p> 
-          <img src="{{ car.image }}" alt="image véhicule">
-          <!-- <button (click)="onSelect(album)" class="btn btn-dark">Details</button> -->
+          <img routerLink="/car/{{car.id}}" src="{{ car.image }}" alt="image véhicule">
         </div>
       </div>
-      <!-- .card -->
-      <!-- Pagination -->
     </div>
-    <!-- .music -->
 </div>

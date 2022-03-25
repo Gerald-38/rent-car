@@ -25,20 +25,19 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class CarsComponent implements OnInit {
 
   titlePage: string = "Véhicules proposés à la location";
-  cars: Car[] | undefined ;  
+  cars!: Car[];  
   isOpen : boolean = false;
   carsNumber: any;
   count: any;
 
 
   constructor(private carService: CarService) { 
-    // this.carService.getCars()
     console.log(this.carService.getCars().subscribe(
-      cars => this.cars = cars
+      cars => console.log('*-*-*-*-*-*-*', cars) 
     ))
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
 
     this.carService.paginate(0, 5).subscribe(cars => this.cars = cars);
     this.count = this.carService.count().subscribe(
@@ -54,10 +53,15 @@ export class CarsComponent implements OnInit {
       , 10); 
   }
 
+  search($event: any){
+    if($event) this.cars = $event;
+  }
+
   // mise à jour de la pagination
   paginate(car: { start: number; end: number; }) {
+    console.log(car);
     this.carService.paginate(car.start, car.end).subscribe(
-      cars => this.cars = cars
+            cars => this.cars = cars
     )
   }
 }

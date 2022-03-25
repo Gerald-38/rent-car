@@ -36,8 +36,7 @@ export class AdminComponent implements OnInit {
       console.log(car, 'DELETE CAR CAR')
 
       this.carService.deleteCar(car).subscribe(
-        () => {
-          alert("Voiture supprimée");
+        () => {       
           this.router.navigate(['/admin']); 
           location.reload();
         }
