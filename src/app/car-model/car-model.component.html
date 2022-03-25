@@ -1,12 +1,46 @@
 <div class="card" *ngIf="car">
-    <div class="card-header">
-        {{ car.brand }} {{ car.type  }}
+  <div class="card-header">
+      <h3>{{ car.brand }} {{ car.type  }}</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <p class="card-text">{{ car.description  }}</p>
+        <p>Puissance: {{ car.power  }} ch</p>
+        <p *ngIf="car.wifi">Wifi inclus</p>
+        <p>Prix : {{ car.price }} € / jour </p>
+        <img width="750" src="{{ car.image }}" class="rounded mx-auto d-block" alt="...">
+      </div>
+      <div class="col">
+        <form>
+          <p>Je réserve cette voiture</p>
+          <div class="form-group">
+            <label for="name">Nom :</label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" required placeholder="Entrez votre nom">
+          </div>
+          <div class="form-group">
+            <label for="firstName">Prénom :</label>
+            <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" required placeholder="Entrez votre prénom">
+          </div>
+          <div class="form-group">
+            <label for="firstName">email :</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required placeholder="Entrez votre email">
+          </div>
+          <div class="form-group">
+            <label for="startdate">du :</label>
+            <input type="date" class="form-control" id="startdate" aria-describedby="emailHelp" required placeholder="début location">
+          </div>
+          <div class="form-group">
+            <label for="enddate">au :</label>
+            <input type="date" class="form-control" id="enddate" aria-describedby="emailHelp"  required placeholder="fin location">
+          </div>
+          <br>
+          <button class="btn btn-primary" (click)="onCheck()">Réserver</button>
+        </form>
+      </div>
     </div>
-    <div class="card-body">         
-      <p class="card-text">{{ car.description  }}</p>
-      <p>Puissance: {{ car.power  }} ch</p>
-      <p *ngIf="car.wifi">Wifi inclus</p>
-      <p>Prix : {{ car.price }} € / jour </p>
-      <img width="750" src="{{ car.image }}" class="rounded mx-auto d-block" alt="...">
-    </div>
+  </div>
+  <div class="return">
+    <button class="btn btn-primary btn-return" type="submit" routerLink="/cars">Retour à la liste des voitures</button>
+  </div>  
 </div>

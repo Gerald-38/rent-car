@@ -25,10 +25,6 @@ import { PaginateComponent } from './paginate/paginate.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SearchComponent } from './search/search.component';
 
-// import * as firebase from 'firebase/compat';
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyC2ldpWXZ84EsUAWYILK3LoC7gSmOOluaU",
   authDomain: "cars-32f4e.firebaseapp.com",
@@ -42,10 +38,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
-
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
 const carsRoutes: Routes = [
   {

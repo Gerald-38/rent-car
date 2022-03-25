@@ -26,5 +26,8 @@ export class CarModelComponent implements OnInit {
       )
     }
   }
+  onCheck() {
+    alert("Merci ! Vous allez etre contacté par nos services !")
+  }
 
 }

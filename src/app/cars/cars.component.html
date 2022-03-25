@@ -1,13 +1,12 @@
 <div  class="row-content">
-  <div class="col-sm-4 video">
-        
+  <div class="col-sm-4 video">        
   </div>
-    <h1>{{ titlePage }}</h1>
-    <app-paginate (setPaginate)="paginate($event)"></app-paginate> <app-search (searchCars)="search($event)"></app-search>
+    <h2>{{ titlePage }}</h2>
+    <app-paginate (setPaginate)="paginate($event)"></app-paginate>
     <div [@details]="isOpen? 'open' : 'opening'" class="col-sm-8 music">
       <div class="card" *ngFor="let car of cars; let index = index;">
         <div class="card-header">
-          <h5 class="card-title"><a class="text-info" routerLink="/car/{{car.id}}">{{ car.brand }} {{ car.type }}</a></h5>          
+          <h3 class="card-title"><a class="text-info" routerLink="/car/{{car.id}}">{{ car.brand }} {{ car.type }}</a></h3>          
         </div>
         <div class="card-body">          
           <p class="card-text">{{ car.price }} € / jour</p> 
