@@ -2,9 +2,7 @@
 
 ## Description du projet
 
-Site de location de voitures. Identifiants pour l'authentification : 
-login : test@test.com
-pwd: azerty
+Site de location de voitures (TP 3WA, option Angular, Mars 2022 )
 
 ## Technos utilisées
 * Material design (pour le formulaire d'authentification)

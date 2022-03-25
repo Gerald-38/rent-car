@@ -39,7 +39,7 @@ export class CarsComponent implements OnInit {
 
   ngOnInit(){
 
-    this.carService.paginate(0, 5).subscribe(cars => this.cars = cars);
+    this.carService.paginate(0, 9).subscribe(cars => this.cars = cars);
     this.count = this.carService.count().subscribe(
       count => this.count = count
     ); 

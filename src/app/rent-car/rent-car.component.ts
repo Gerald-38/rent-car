@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-rent-car',
@@ -12,7 +13,8 @@ export class RentCarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCheck() {
+
+  onSubmit(form: NgForm): void {
     alert("Merci ! Vous allez etre contacté par nos services !")
   }
 
